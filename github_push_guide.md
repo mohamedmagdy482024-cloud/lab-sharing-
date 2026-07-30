@@ -42,30 +42,3 @@ git commit -m "Fixed a bug in the UI layout"
 # 3. Push the changes normally
 git push origin main
 ```
-
-## Troubleshooting: "Authentication failed" Error
-
-If you see this error when running `git push`:
-`fatal: Authentication failed for 'https://github.com/...'`
-
-It means GitHub is rejecting your password. **GitHub no longer accepts account passwords for terminal pushes.** Instead, you must use a **Personal Access Token (PAT)**.
-
-### How to push using a Token:
-
-1. **Generate a Token on GitHub:**
-   - Go to GitHub.com → **Settings** → **Developer Settings** (at the very bottom of the left sidebar) → **Personal access tokens** → **Tokens (classic)**.
-   - Click **Generate new token (classic)**.
-   - Give it a note (e.g., "Ubuntu Terminal"), set expiration, and **check the `repo` box** to give it push access.
-   - Click Generate and **copy the token** (it starts with `ghp_`).
-
-2. **Push your code using the Token:**
-   When you run `git push origin main`, it will ask for your Username and Password.
-   - **Username:** `mohamedmagdy482024-cloud`
-   - **Password:** Paste the Token you just copied (you won't see it as you type, just paste and press Enter).
-
-### (Optional) Save your Token so it doesn't ask every time
-To make Git remember your credentials so you don't have to copy-paste the token every time, run this command once:
-```bash
-git config --global credential.helper store
-```
-The next time you push and enter your token, it will be saved permanently on this computer.
